@@ -199,7 +199,7 @@ script:
         tar zxfv "$SRC_TGZ"
         cd "$PKGVER"
         cabal configure --enable-tests
-        cabal build
+        cabal build || cat .stack-work/logs/conduit-combinators-1.1.2*.log
         cd $ORIGDIR
       done
       ;;
